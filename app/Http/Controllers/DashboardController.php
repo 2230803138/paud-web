@@ -28,7 +28,10 @@ class DashboardController extends Controller
 
         $aktivitas = Pendaftaran::latest()->take(5)->get();
 
-        $grafik = Pendaftaran::selectRaw('MONTH(created_at) as bulan, COUNT(*) as total')
+        $isPgsql = DB::connection()->getDriverName() === 'pgsql';
+        $pendaftaranMonthExpr = $isPgsql ? 'EXTRACT(MONTH FROM created_at)' : 'MONTH(created_at)';
+
+        $grafik = Pendaftaran::selectRaw("{$pendaftaranMonthExpr} as bulan, COUNT(*) as total")
             ->groupBy('bulan')
             ->orderBy('bulan')
             ->get();
@@ -54,14 +57,16 @@ class DashboardController extends Controller
             ->sum('nominal');
 
         // ================= GRAFIK PEMASUKAN =================
+            $pembayaranMonthExpr = $isPgsql ? 'EXTRACT(MONTH FROM tanggal_bayar)' : 'MONTH(tanggal_bayar)';
+
             $grafikPembayaran = Pembayaran::select(
-                    DB::raw('MONTH(tanggal_bayar) as bulan'),
+                    DB::raw("{$pembayaranMonthExpr} as bulan"),
                     DB::raw('SUM(nominal) as total')
                 )
                 ->where('status', 'Lunas')
                 ->whereYear('tanggal_bayar', now()->year)
-                ->groupBy(DB::raw('MONTH(tanggal_bayar)'))
-                ->orderBy(DB::raw('MONTH(tanggal_bayar)'))
+                ->groupBy(DB::raw($pembayaranMonthExpr))
+                ->orderBy(DB::raw($pembayaranMonthExpr))
                 ->get();
 
             $labelBulan = [];
