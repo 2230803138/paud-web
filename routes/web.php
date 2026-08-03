@@ -87,6 +87,7 @@ Route::get('/dashboard-orangtua', function () {
     $alfa = 0;
     $belumLunasCount = 0;
     $belumLunasItems = collect();
+    $lastPaymentDate = null;
 
     if ($siswa) {
 
