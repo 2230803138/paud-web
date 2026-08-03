@@ -46,5 +46,43 @@ class DatabaseSeeder extends Seeder
                 ]
             );
         }
+
+        // 3. Akun Sample Guru
+        $firstCabang = Cabang::first();
+        $guruUser = User::updateOrCreate(
+            ['email' => 'guru@gmail.com'],
+            [
+                'name' => 'Guru Pengajar',
+                'password' => bcrypt('guru123'),
+                'role' => 'guru',
+                'cabang_id' => $firstCabang ? $firstCabang->id : null,
+            ]
+        );
+
+        if ($guruUser) {
+            \App\Models\Guru::updateOrCreate(
+                ['user_id' => $guruUser->id],
+                [
+                    'user_id' => $guruUser->id,
+                    'nama' => 'Guru Pengajar',
+                    'nip' => '199001012026012001',
+                    'jenis_kelamin' => 'Perempuan',
+                    'jabatan' => 'Guru Kelas',
+                    'no_hp' => '081234567890',
+                    'alamat' => 'Palembang',
+                ]
+            );
+        }
+
+        // 4. Akun Sample Orang Tua
+        User::updateOrCreate(
+            ['email' => 'orangtua@gmail.com'],
+            [
+                'name' => 'Orang Tua Siswa',
+                'password' => bcrypt('orangtua123'),
+                'role' => 'orangtua',
+                'cabang_id' => $firstCabang ? $firstCabang->id : null,
+            ]
+        );
     }
 }

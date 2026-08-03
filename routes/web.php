@@ -37,6 +37,15 @@ Route::get('/', function () {
     return view('home', compact('informasi'));
 });
 
+Route::get('/run-seed', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+        return 'Seeding completed successfully!<br><br>Output:<br>' . nl2br(\Illuminate\Support\Facades\Artisan::output());
+    } catch (\Exception $e) {
+        return 'Seeding error: ' . $e->getMessage();
+    }
+});
+
 
 // ================= REGISTER ORANG TUA =================
 Route::get('/register-orangtua', [OrangtuaRegisterController::class, 'create'])
