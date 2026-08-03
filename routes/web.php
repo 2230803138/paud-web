@@ -37,6 +37,16 @@ Route::get('/', function () {
     return view('home', compact('informasi'));
 });
 
+// Temporary route to run migrations on Vercel
+Route::get('/run-migrations', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
+        return 'Migration and seeding completed successfully!<br><br>Output:<br>' . nl2br(\Illuminate\Support\Facades\Artisan::output());
+    } catch (\Exception $e) {
+        return 'Migration error: ' . $e->getMessage();
+    }
+});
+
 // ================= REGISTER ORANG TUA =================
 Route::get('/register-orangtua', [OrangtuaRegisterController::class, 'create'])
     ->middleware('guest')

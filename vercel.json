@@ -33,6 +33,12 @@
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
     "CACHE_DRIVER": "array",
     "SESSION_DRIVER": "cookie",
-    "LOG_CHANNEL": "stderr"
+    "LOG_CHANNEL": "stderr",
+    "DB_CONNECTION": "pgsql",
+    "DB_HOST": "aws-0-ap-southeast-1.pooler.supabase.com",
+    "DB_PORT": "5432",
+    "DB_DATABASE": "postgres",
+    "DB_USERNAME": "postgres.fjebltvnswxcjezapepv",
+    "DB_PASSWORD": "ciVvsNlxPwaVOHs8"
   }
 }
