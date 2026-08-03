@@ -26,9 +26,13 @@ use App\Http\Controllers\DashboardGuruController;
 
 // ================= HOME =================
 Route::get('/', function () {
-    $informasi = \App\Models\Informasi::where('status', 'Dipublikasikan')
-        ->latest('tanggal')
-        ->get();
+    try {
+        $informasi = \App\Models\Informasi::where('status', 'Dipublikasikan')
+            ->latest('tanggal')
+            ->get();
+    } catch (\Exception $e) {
+        $informasi = collect();
+    }
 
     return view('home', compact('informasi'));
 });
