@@ -1,0 +1,122 @@
+
+  GET|HEAD        / .................................................................................................. 
+  POST            _ignition/execute-solution ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionContr…
+  GET|HEAD        _ignition/health-check ....... ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController
+  POST            _ignition/update-config .... ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
+  GET|HEAD        absensi .................................................... absensi.index › AbsensiController@index
+  POST            absensi .................................................... absensi.store › AbsensiController@store
+  GET|HEAD        absensi-anak ...................................................................... orangtua.absensi
+  GET|HEAD        absensi-guru ...................................... absensi.guru.index › AbsensiGuruController@index
+  GET|HEAD        absensi/create ........................................... absensi.create › AbsensiController@create
+  GET|HEAD        absensi/{absensi} ............................................ absensi.show › AbsensiController@show
+  PUT|PATCH       absensi/{absensi} ........................................ absensi.update › AbsensiController@update
+  DELETE          absensi/{absensi} ...................................... absensi.destroy › AbsensiController@destroy
+  GET|HEAD        absensi/{absensi}/edit ....................................... absensi.edit › AbsensiController@edit
+  GET|HEAD        api/user ........................................................................................... 
+  GET|HEAD        cek-pendaftaran ...................................................... PendaftaranController@cekForm
+  POST            cek-pendaftaran .................................................... PendaftaranController@cekStatus
+  GET|HEAD        chat ............................................................. chat.index › ChatController@index
+  POST            chat ............................................................. chat.store › ChatController@store
+  GET|HEAD        chat/create .................................................... chat.create › ChatController@create
+  GET|HEAD        chat/{chat} ........................................................ chat.show › ChatController@show
+  PUT|PATCH       chat/{chat} .................................................... chat.update › ChatController@update
+  DELETE          chat/{chat} .................................................. chat.destroy › ChatController@destroy
+  GET|HEAD        chat/{chat}/edit ................................................... chat.edit › ChatController@edit
+  GET|HEAD        confirm-password ........................ password.confirm › Auth\ConfirmablePasswordController@show
+  POST            confirm-password .......................................... Auth\ConfirmablePasswordController@store
+  GET|HEAD        dashboard .................................................... dashboard › DashboardController@index
+  GET|HEAD        dashboard-guru ...................................... dashboard.guru › DashboardGuruController@index
+  GET|HEAD        dashboard-orangtua .............................................................. dashboard.orangtua
+  POST            email/verification-notification verification.send › Auth\EmailVerificationNotificationController@st…
+  GET|HEAD        forgot-password ......................... password.request › Auth\PasswordResetLinkController@create
+  POST            forgot-password ............................ password.email › Auth\PasswordResetLinkController@store
+  GET|HEAD        guru ............................................................. guru.index › GuruController@index
+  POST            guru ............................................................. guru.store › GuruController@store
+  POST            guru/absen-masuk .................................... guru.absen.masuk › AbsensiGuruController@masuk
+  POST            guru/absen-pulang ................................. guru.absen.pulang › AbsensiGuruController@pulang
+  GET|HEAD        guru/absensi ........................................ guru.absensi › DashboardGuruController@absensi
+  GET|HEAD        guru/absensi-anak .......................... guru.absensi-anak › DashboardGuruController@absensiAnak
+  GET|HEAD        guru/create .................................................... guru.create › GuruController@create
+  GET|HEAD        guru/perkembangan-anak .................... guru.perkembangan › DashboardGuruController@perkembangan
+  GET|HEAD        guru/profil ........................................... guru.profil › DashboardGuruController@profil
+  GET|HEAD        guru/{guru} ........................................................ guru.show › GuruController@show
+  PUT|PATCH       guru/{guru} .................................................... guru.update › GuruController@update
+  DELETE          guru/{guru} .................................................. guru.destroy › GuruController@destroy
+  GET|HEAD        guru/{guru}/edit ................................................... guru.edit › GuruController@edit
+  GET|HEAD        informasi .............................................. informasi.index › InformasiController@index
+  POST            informasi .............................................. informasi.store › InformasiController@store
+  GET|HEAD        informasi/create ..................................... informasi.create › InformasiController@create
+  GET|HEAD        informasi/{informasi} .................................... informasi.show › InformasiController@show
+  PUT|PATCH       informasi/{informasi} ................................ informasi.update › InformasiController@update
+  DELETE          informasi/{informasi} .............................. informasi.destroy › InformasiController@destroy
+  GET|HEAD        informasi/{informasi}/edit ............................... informasi.edit › InformasiController@edit
+  GET|HEAD        jadwal ....................................................... jadwal.index › JadwalController@index
+  POST            jadwal ....................................................... jadwal.store › JadwalController@store
+  GET|HEAD        jadwal-orangtua .................................................................... orangtua.jadwal
+  GET|HEAD        jadwal/create .............................................. jadwal.create › JadwalController@create
+  GET|HEAD        jadwal/{jadwal} ................................................ jadwal.show › JadwalController@show
+  PUT|PATCH       jadwal/{jadwal} ............................................ jadwal.update › JadwalController@update
+  DELETE          jadwal/{jadwal} .......................................... jadwal.destroy › JadwalController@destroy
+  GET|HEAD        jadwal/{jadwal}/edit ........................................... jadwal.edit › JadwalController@edit
+  GET|HEAD        kelas .......................................................... kelas.index › KelasController@index
+  POST            kelas .......................................................... kelas.store › KelasController@store
+  GET|HEAD        kelas/create ................................................. kelas.create › KelasController@create
+  GET|HEAD        kelas/{kela} ..................................................... kelas.show › KelasController@show
+  PUT|PATCH       kelas/{kela} ................................................. kelas.update › KelasController@update
+  DELETE          kelas/{kela} ............................................... kelas.destroy › KelasController@destroy
+  GET|HEAD        kelas/{kela}/edit ................................................ kelas.edit › KelasController@edit
+  GET|HEAD        laporan .................................................... laporan.index › LaporanController@index
+  POST            laporan .................................................... laporan.store › LaporanController@store
+  GET|HEAD        laporan-anak ....................................................................................... 
+  GET|HEAD        laporan/create ........................................... laporan.create › LaporanController@create
+  GET|HEAD        laporan/{laporan} ............................................ laporan.show › LaporanController@show
+  PUT|PATCH       laporan/{laporan} ........................................ laporan.update › LaporanController@update
+  DELETE          laporan/{laporan} ...................................... laporan.destroy › LaporanController@destroy
+  GET|HEAD        laporan/{laporan}/edit ....................................... laporan.edit › LaporanController@edit
+  GET|HEAD        login ........................................... login › Auth\AuthenticatedSessionController@create
+  POST            login .................................................... Auth\AuthenticatedSessionController@store
+  GET|HEAD        login-guru ............................. guru.login › Auth\AuthenticatedSessionController@createGuru
+  POST            login-guru ............................ guru.login.store › Auth\AuthenticatedSessionController@store
+  GET|HEAD        login-orangtua ......................... orangtua.login › Auth\AuthenticatedSessionController@create
+  POST            login-orangtua ........................................... Auth\AuthenticatedSessionController@store
+  POST            logout ........................................ logout › Auth\AuthenticatedSessionController@destroy
+  GET|HEAD        orangtua/laporan .................................. orangtua.laporan › LaporanController@laporanOrtu
+  PUT             password .......................................... password.update › Auth\PasswordController@update
+  GET|HEAD        pembayaran ........................................... pembayaran.index › PembayaranController@index
+  POST            pembayaran ........................................... pembayaran.store › PembayaranController@store
+  GET|HEAD        pembayaran/create .................................. pembayaran.create › PembayaranController@create
+  GET|HEAD        pembayaran/pdf ..................................... pembayaran.pdf › PembayaranController@exportPdf
+  GET|HEAD        pembayaran/{pembayaran} ................................ pembayaran.show › PembayaranController@show
+  PUT|PATCH       pembayaran/{pembayaran} ............................ pembayaran.update › PembayaranController@update
+  DELETE          pembayaran/{pembayaran} .......................... pembayaran.destroy › PembayaranController@destroy
+  GET|HEAD        pembayaran/{pembayaran}/edit ........................... pembayaran.edit › PembayaranController@edit
+  POST            pendaftaran ........................................ pendaftaran.store › PendaftaranController@store
+  GET|HEAD        pendaftaran ........................................ pendaftaran.index › PendaftaranController@index
+  GET|HEAD        pendaftaran/create ............................... pendaftaran.create › PendaftaranController@create
+  PUT             pendaftaran/{id}/status .................... pendaftaran.status › PendaftaranController@updateStatus
+  GET|HEAD        pendaftaran/{pendaftaran} ............................ pendaftaran.show › PendaftaranController@show
+  PUT             pendaftaran/{pendaftaran} ........................ pendaftaran.update › PendaftaranController@update
+  DELETE          pendaftaran/{pendaftaran} ...................... pendaftaran.destroy › PendaftaranController@destroy
+  GET|HEAD        pendaftaran/{pendaftaran}/edit ....................... pendaftaran.edit › PendaftaranController@edit
+  GET|HEAD        profile ...................................................... profile.edit › ProfileController@edit
+  PATCH           profile .................................................. profile.update › ProfileController@update
+  DELETE          profile ................................................ profile.destroy › ProfileController@destroy
+  GET|HEAD        register ........................................... register › Auth\RegisteredUserController@create
+  POST            register ....................................................... Auth\RegisteredUserController@store
+  GET|HEAD        register-orangtua ....................... orangtua.register › Auth\OrangtuaRegisterController@create
+  POST            register-orangtua .................. orangtua.register.store › Auth\OrangtuaRegisterController@store
+  POST            reset-password ................................... password.store › Auth\NewPasswordController@store
+  GET|HEAD        reset-password/{token} .......................... password.reset › Auth\NewPasswordController@create
+  GET|HEAD        sanctum/csrf-cookie .............. sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
+  GET|HEAD        siswa .......................................................... siswa.index › SiswaController@index
+  POST            siswa .......................................................... siswa.store › SiswaController@store
+  GET|HEAD        siswa/create ................................................. siswa.create › SiswaController@create
+  GET|HEAD        siswa/{siswa} .................................................... siswa.show › SiswaController@show
+  PUT|PATCH       siswa/{siswa} ................................................ siswa.update › SiswaController@update
+  DELETE          siswa/{siswa} .............................................. siswa.destroy › SiswaController@destroy
+  GET|HEAD        siswa/{siswa}/edit ............................................... siswa.edit › SiswaController@edit
+  GET|HEAD        verify-email .......................... verification.notice › Auth\EmailVerificationPromptController
+  GET|HEAD        verify-email/{id}/{hash} .......................... verification.verify › Auth\VerifyEmailController
+
+                                                                                                  Showing [118] routes
+
