@@ -27,7 +27,7 @@
   "buildCommand": "npm run build",
   "env": {
     "APP_ENV": "production",
-    "APP_DEBUG": "true",
+    "APP_DEBUG": "false",
     "VIEW_COMPILED_PATH": "/tmp",
     "APP_SERVICES_CACHE": "/tmp/services.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
